@@ -15,7 +15,7 @@ const Home = () => {
     >
       <img src="/spotify_logo.png" alt="Spotify Logo" style={{ height: 200 }} />
       <Typography variant="h3">
-        Welcome to a useless Spotify application
+        Welcome to a Spotify application
       </Typography>
     </Box>
   );
