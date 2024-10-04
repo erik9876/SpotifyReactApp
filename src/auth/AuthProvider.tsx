@@ -26,8 +26,8 @@ export const AuthProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const [loggedIn, setLoggedIn] = useState<boolean>(false);
 
   const fetchClientToken = useCallback(async () => {
-    const CLIENT_ID = "6df97fd35f3e4eb2ae12396a86d5a8c9";
-    const CLIENT_SECRET = "63bc70d5aa32420d882b626d05c07ad1";
+    const CLIENT_ID = import.meta.env.VITE_CLIENT_ID;
+    const CLIENT_SECRET = import.meta.env.VITE_CLIENT_SECRET;
 
     try {
       const response = await fetch("https://accounts.spotify.com/api/token", {
@@ -50,8 +50,8 @@ export const AuthProvider: FC<{ children: ReactNode }> = ({ children }) => {
   }, []);
 
   const fetchUserToken = useCallback(async (code: string) => {
-    const CLIENT_ID = "6df97fd35f3e4eb2ae12396a86d5a8c9";
-    const CLIENT_SECRET = "63bc70d5aa32420d882b626d05c07ad1";
+    const CLIENT_ID = import.meta.env.VITE_CLIENT_ID;
+    const CLIENT_SECRET = import.meta.env.VITE_CLIENT_SECRET;
     const REDIRECT_URI = "http://localhost:5173/callback";
 
     try {
@@ -65,6 +65,7 @@ export const AuthProvider: FC<{ children: ReactNode }> = ({ children }) => {
       });
 
       const data = await response.json();
+      console.log(data)
       if (response.ok) {
         setUserToken(data.access_token);
         setLoggedIn(true);
