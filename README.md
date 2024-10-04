@@ -1,30 +1,42 @@
-# React + TypeScript + Vite
+# Spotify Playlist Creator 🎧
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a web application built with React and TypeScript that allows users to generate custom Spotify playlists based on their selected seed tracks. Using the Spotify API, the app provides an intuitive interface to search for tracks and create personalized playlists.
 
-Currently, two official plugins are available:
+This project was created to explore and demonstrate the use of React and the Spotify API for playlist generation, with plans to extend its features.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+- **Playlist Library**: Users can get an overview over their current playlists in Spotify.
+- **Top Items**: Users can get insights into their short term most listened artists and tracks and can use them as seed tracks for playlist generation.
+- **Search Tracks**: Users can search for items (albums, artists, tracks and playlists) via the Spotify API.
+- **Generate Playlists**: Create custom playlists based on the seed tracks and artists and add them directly to your Spotify account.
+- (Planned) **Currently Playing**: Allow users to see the currently playing track.
+- (Planned) **Search for Seeds**: Enable users to use search results as seeds for playlist generation.
+- (Planned) **Remove Tracks**: Quickly remove unwanted tracks from playlists.
+- (Planned) **Modify Range for Top Items**: Have also insights into mid and long time top items.
 
-## Expanding the ESLint configuration
+## Installation
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+To run this project locally, follow these steps:
 
-- Configure the top-level `parserOptions` property like this:
+### Prerequisites
+- **Node.js**: Make sure you have Node.js installed on your machine. You can download it from [here](https://nodejs.org/).
+- **Spotify Developer Account**: You'll need a Spotify Developer Account to get your client ID and secret. Create one [here](https://developer.spotify.com/dashboard/).
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### Steps:
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/https://github.com/erik9876/SpotifyReactApp.git
+2. Navigate to the project directory:
+   ```bash
+   cd SpotifyReactApp
+3. Install the dependencies:
+   ```bash
+   npm install
+4. Create a .env file in the root of the project and add your Spotify API credentials:
+   ```bash
+   VITE_CLIENT_ID=your-client-id
+   VITE_CLIENT_SECRET=your-client-secret
+5. Run the app
+   ```bash
+   npm start
+6. Open http://localhost:5173 in your browser to view the app.
