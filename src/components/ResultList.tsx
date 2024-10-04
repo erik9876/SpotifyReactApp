@@ -11,7 +11,7 @@ const ResultList = () => {
   if (!results) return <Typography variant="h6">No results found</Typography>;
 
   return (
-    <div>
+    <div style={{paddingBottom: '60px'}}>
       <Typography variant="h5" sx={{ fontWeight: "bold" }} gutterBottom>
         Search Results:
       </Typography>

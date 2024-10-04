@@ -10,6 +10,7 @@ import LoadingComponent from "./components/LoadingComponent"; // Placeholder for
 
 // Lazy-loaded components
 const NavBar = lazy(() => import("./components/NavBar"));
+const Footer = lazy(() => import("./components/Footer"));
 const Home = lazy(() => import("./pages/Home"));
 const ResultList = lazy(() => import("./components/ResultList"));
 const PlaylistList = lazy(() => import("./components/PlaylistList"));
@@ -33,6 +34,7 @@ function App() {
                 <Route path="/callback" element={<Callback />} />
               </Routes>
             </div>
+            <Footer />
           </Suspense>
         </AppProviders>
       </ErrorBoundary>

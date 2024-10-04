@@ -141,95 +141,95 @@ const TopItems = () => {
   }
 
   return (
-    <div>
-      {/* Display Artists */}
-      {topArtists && topArtists.items[0] !== null && (
-        <Grid container spacing={2} sx={{ marginBottom: "20px" }}>
-          <Grid item xs={12}>
-            <Typography variant="h5" gutterBottom>
-              Artists
-            </Typography>
-          </Grid>
-          {topArtists.items.map((artist) => (
-            <Grid item xs={12} md={6} key={artist.id}>
-              <Card
-                sx={{
-                  display: "flex",
-                  height: 150,
-                  cursor: hover ? "pointer" : "default",
-                  border: selectedIds[artist.id]
-                    ? "2px solid rgba(29, 185, 84, 0.4)"
-                    : "none",
-                }}
-                onClick={() => handleSelect(artist.id, artist.name, "artist")}
-                onMouseEnter={() => setHover(true)}
-                onMouseLeave={() => setHover(false)}
-              >
-                <CardMedia
-                  component="img"
-                  sx={{ width: 151 }}
-                  image={artist.images[0]?.url}
-                  alt={artist.name}
-                />
-                <CardContent sx={{ flex: "1 0 auto" }}>
-                  <Typography variant="h6">{artist.name}</Typography>
-                  <Typography variant="body2">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    {artist.followers.total} followers
-                  </Typography>
-                </CardContent>
-              </Card>
+      <div style={{paddingBottom: '60px'}}>
+        {/* Display Artists */}
+        {topArtists && topArtists.items[0] !== null && (
+            <Grid container spacing={2} sx={{marginBottom: "20px"}}>
+              <Grid item xs={12}>
+                <Typography variant="h5" gutterBottom>
+                  Artists
+                </Typography>
+              </Grid>
+              {topArtists.items.map((artist) => (
+                  <Grid item xs={12} md={6} key={artist.id}>
+                    <Card
+                        sx={{
+                          display: "flex",
+                          height: 150,
+                          cursor: hover ? "pointer" : "default",
+                          border: selectedIds[artist.id]
+                              ? "2px solid rgba(29, 185, 84, 0.4)"
+                              : "none",
+                        }}
+                        onClick={() => handleSelect(artist.id, artist.name, "artist")}
+                        onMouseEnter={() => setHover(true)}
+                        onMouseLeave={() => setHover(false)}
+                    >
+                      <CardMedia
+                          component="img"
+                          sx={{width: 151}}
+                          image={artist.images[0]?.url}
+                          alt={artist.name}
+                      />
+                      <CardContent sx={{flex: "1 0 auto"}}>
+                        <Typography variant="h6">{artist.name}</Typography>
+                        <Typography variant="body2">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                          {artist.followers.total} followers
+                        </Typography>
+                      </CardContent>
+                    </Card>
+                  </Grid>
+              ))}
             </Grid>
-          ))}
-        </Grid>
-      )}
+        )}
 
-      {/* Display Tracks */}
-      {topTracks && topTracks.items[0] !== null && (
-        <Grid container spacing={2} sx={{ marginBottom: "20px" }}>
-          <Grid item xs={12}>
-            <Typography variant="h5" gutterBottom>
-              Tracks
-            </Typography>
-          </Grid>
-          {topTracks.items.map((track) => (
-            <Grid item xs={12} md={6} key={track.id}>
-              <Card
-                sx={{
-                  display: "flex",
-                  height: 150,
-                  cursor: hover ? "pointer" : "default",
-                  border: selectedIds[track.id]
-                    ? "2px solid rgba(29, 185, 84, 0.4)"
-                    : "none",
-                }}
-                onClick={() => handleSelect(track.id, track.name, "track")}
-                onMouseEnter={() => setHover(true)}
-                onMouseLeave={() => setHover(false)}
-              >
-                <CardMedia
-                  component="img"
-                  sx={{ width: 151 }}
-                  image={track.album.images[0]?.url}
-                  alt={track.name}
-                />
-                <CardContent sx={{ flex: "1 0 auto" }}>
-                  <Typography variant="h6">{track.name}</Typography>
-                  <Typography variant="body2">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    Album: {track.album.name}
-                  </Typography>
-                </CardContent>
-              </Card>
+        {/* Display Tracks */}
+        {topTracks && topTracks.items[0] !== null && (
+            <Grid container spacing={2} sx={{marginBottom: "20px"}}>
+              <Grid item xs={12}>
+                <Typography variant="h5" gutterBottom>
+                  Tracks
+                </Typography>
+              </Grid>
+              {topTracks.items.map((track) => (
+                  <Grid item xs={12} md={6} key={track.id}>
+                    <Card
+                        sx={{
+                          display: "flex",
+                          height: 150,
+                          cursor: hover ? "pointer" : "default",
+                          border: selectedIds[track.id]
+                              ? "2px solid rgba(29, 185, 84, 0.4)"
+                              : "none",
+                        }}
+                        onClick={() => handleSelect(track.id, track.name, "track")}
+                        onMouseEnter={() => setHover(true)}
+                        onMouseLeave={() => setHover(false)}
+                    >
+                      <CardMedia
+                          component="img"
+                          sx={{width: 151}}
+                          image={track.album.images[0]?.url}
+                          alt={track.name}
+                      />
+                      <CardContent sx={{flex: "1 0 auto"}}>
+                        <Typography variant="h6">{track.name}</Typography>
+                        <Typography variant="body2">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                          Album: {track.album.name}
+                        </Typography>
+                      </CardContent>
+                    </Card>
+                  </Grid>
+              ))}
             </Grid>
-          ))}
-        </Grid>
-      )}
-    </div>
+        )}
+      </div>
   );
 };
 

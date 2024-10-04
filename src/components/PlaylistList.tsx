@@ -74,7 +74,7 @@ const PlaylistList = () => {
   return (
     <>
       {userToken ? (
-        <>
+        <div style={{paddingBottom: '60px'}}>
           <Typography variant="h5" sx={{ fontWeight: "bold" }} gutterBottom>
             Your Playlist Library
           </Typography>
@@ -107,7 +107,7 @@ const PlaylistList = () => {
               No playlists found or unable to fetch.
             </Typography>
           )}
-        </>
+        </div>
       ) : (
         <Typography variant="h5" sx={{ fontWeight: "bold" }} gutterBottom>
           Please log in to view your playlists
