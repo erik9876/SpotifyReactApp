@@ -8,13 +8,16 @@ const Callback = () => {
 
   useEffect(() => {
     const code = new URLSearchParams(window.location.search).get("code");
+
     if (code) {
       fetchUserToken(code)
-        .then(() => navigate("/")) // Assume you have a '/dashboard' route
-        .catch((error: any) => {
-          console.error("Error during token fetch:", error);
-          navigate("/login"); // Assume you have a '/login' route
-        });
+          .then(() => navigate("/"))
+          .catch((error: any) => {
+            console.error("Error during token fetch:", error);
+            navigate("/login");
+          });
+    } else {
+      navigate("/login");
     }
   }, [navigate, fetchUserToken]);
 
