@@ -14,6 +14,9 @@ This project was created to explore and demonstrate the use of React and the Spo
 - (Planned) **Remove Tracks**: Quickly remove unwanted tracks from playlists.
 - (Planned) **Modify Range for Top Items**: Have also insights into mid and long time top items.
 
+## Screenshot
+![homepage.png](public/homepage.png)
+
 ## Installation
 
 To run this project locally, follow these steps:
